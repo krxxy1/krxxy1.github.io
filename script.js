@@ -1,26 +1,15 @@
-const cursor=document.getElementById("cursor");
 const discordCard=document.getElementById("discordCard");
 const breachText=document.getElementById("breachText");
 const music=document.getElementById("music");
 
 // AK cursor follows the mouse. The normal system cursor is hidden via CSS.
-document.addEventListener("mousemove",e=>{
-  if(cursor){
-    cursor.style.left=e.clientX+"px";
-    cursor.style.top=e.clientY+"px";
-  }
-});
-
-function active(v){if(cursor)cursor.classList.toggle("active",v)}
 
 if(discordCard && breachText){
   discordCard.addEventListener("mouseenter",()=>{
-    active(true);
     breachText.textContent="SIGNAL BREACH — ACCESS GRANTED";
     breachText.style.opacity="1";
   });
   discordCard.addEventListener("mouseleave",()=>{
-    active(false);
     breachText.textContent="HOVER TO BREACH";
     breachText.style.opacity=".5";
   });
